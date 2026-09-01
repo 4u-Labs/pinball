@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEON FEVER | Pinball 1982</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-wrapper">
+  <div class="machine-frame">
+    <div class="container">
+      <div class="combo-display">COMBO x2!</div>
+      <div class="game-over-display" id="gameOverDisplay">
+       
+        <div class="sub-text">PRESS SPACE</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <div class="panel-title">MISSION STATUS</div>
+    
+    <div class="display-section">
+      <div class="display-label">CURRENT SCORE</div>
+      <div class="display-value score-display" id="panelScore">000000</div>
+    </div>
+    
+    <div class="display-section">
+      <div class="display-label">HIGH SCORE</div>
+      <div class="display-value high-score-display" id="panelHighScore">000000</div>
+    </div>
+    
+    <div class="display-section">
+      <div class="display-label">BALL COUNT</div>
+      <div class="display-value balls-display" id="panelBalls">●●●</div>
+    </div>
+    
+    <div class="display-section">
+      <div class="display-label">BONUS MULTIPLIER</div>
+      <div class="display-value combo-value" id="panelCombo">x1.0</div>
+    </div>
+    
+    <div class="status-lights">
+      <div class="status-light light-red" id="light1"></div>
+      <div class="status-light light-yellow" id="light2"></div>
+      <div class="status-light light-green" id="light3"></div>
+      <div class="status-light light-blue" id="light4"></div>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-label">BUMPER HITS</div>
+        <div class="stat-value" id="statBumpers">0</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">PADDLE HITS</div>
+        <div class="stat-value" id="statPaddles">0</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">MAX COMBO</div>
+        <div class="stat-value" id="statMaxCombo">1</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">PLAY TIME</div>
+        <div class="stat-value" id="statTime">00:00</div>
+      </div>
+    </div>
+    
+    <div class="panel-controls">
+        <button id="openModalBtn" class="panel-btn">Instructions</button>
+        <button id="soundToggleBtn" class="panel-btn active">🔊 Sound On</button>
+    </div>
+
+    <div style="margin-top: 25px; text-align: center; font-size: 0.6rem; color: #444; letter-spacing: 3px; font-weight: bold; border-top: 1px solid rgba(255,255,255,0.05); pt-4;">
+        &copy; 2026 <span style="color: #00f2ff; text-shadow: 0 0 5px #00f2ff;">4U.IA.BR</span>
+    </div>
+  </div>
+</div>
+
+<!-- O Modal -->
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h4>Control System</h4>
+    <ul>
+      <li><span class="key">←</span> Left Flipper</li>
+      <li><span class="key">→</span> Right Flipper</li>
+      <li><span class="key">SPACE</span> Launch Ball / New Game</li>
+    </ul>
+    <h4>Scoring System</h4>
+    <ul>
+      <li>Bumper Hit: <span class="key">10 pts</span></li>
+      <li>Combo Bonus: <span class="key">+50%</span></li>
+      <li>Max Combo: <span class="key">x5.0</span></li>
+      <li>Special Targets: <span class="key">100 pts</span></li>
+    </ul>
+  </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdn.rawgit.com/schteppe/poly-decomp.js/1ef946f1/build/decomp.min.js'></script>
+<script src='https://cdn.rawgit.com/liabru/matter-js/0895d81f/build/matter.min.js'></script>
+<script src='https://cdn.rawgit.com/liabru/matter-attractors/c470ed42/build/matter-attractors.min.js'></script>
+
+<script src="script.js"></script>
+</body>
+</html>
